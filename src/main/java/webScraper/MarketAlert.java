@@ -251,14 +251,6 @@ public class MarketAlert {
 
         String icon = driver.findElement(By.cssSelector(" tbody > tr:first-of-type > td > h4 > img")).getAttribute("src");
 
-    /*    String type1 = "icon-car.png";
-        String type2 = "icon-boat.png";
-        String type3 = "icon-property-rent.png";
-        String type4 = "icon-property-sale.png";
-        String type5 = "icon-toys.png";
-        String type6 = "icon-electronics.png";
-*/
-
         String split = "https://www.marketalertum.com/images/";
         if(icon.equals(split.concat(type))){
             return "equal";
@@ -266,7 +258,4 @@ public class MarketAlert {
         return "different";
     }
 
-
-    // https://www.marketalertum.com/images/icon-electronics.png
-   //  https://www.marketalertum.com/images/icon-electronics.png
 }

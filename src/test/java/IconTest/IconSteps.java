@@ -38,5 +38,9 @@ public class IconSteps {
 
     @And("the icon displayed should be {string}")
     public void theIconDisplayedShouldBe(String arg0) {
+
+       String result =  marketAlert.checkIconFileName(arg0);
+
+        Assertions.assertEquals("test", result);
     }
 }
