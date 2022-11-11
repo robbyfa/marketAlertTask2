@@ -16,7 +16,7 @@ public class InvalidLoginSteps {
     }
 
     @When("I login using invalid credentials")
-    public void iLoginUsingInvalidCredentials() {
+    public void iLoginUsingInvalidCredentials() throws InterruptedException {
         marketAlert.invalidLogin();
     }
 

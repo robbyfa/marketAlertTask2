@@ -26,7 +26,7 @@ public class IconSteps {
     }
 
     @When("I view a list of alerts")
-    public void iViewAListOfAlerts() {
+    public void iViewAListOfAlerts() throws InterruptedException {
         marketAlert.validLogin();
     }
 
@@ -39,8 +39,6 @@ public class IconSteps {
     @And("the icon displayed should be {string}")
     public void theIconDisplayedShouldBe(String arg0) {
 
-       String result =  marketAlert.checkIconFileName(arg0);
-
-        Assertions.assertEquals("test", result);
+        Assertions.assertTrue(marketAlert.checkIconFileName(arg0));
     }
 }

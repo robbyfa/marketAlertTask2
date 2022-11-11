@@ -47,6 +47,7 @@ public class MarketAlert {
         System.setProperty("webdriver.chrome.driver", "/Users/rober/webtesting/chromedriver.exe");
         driver = new ChromeDriver();
         driver.get("https://www.ultimate.com.mt/product-category/tv-audio/audio/headphones/");
+        Thread.sleep(500);
 
         for (int i = 0; i < 5; i++) {
 
@@ -93,10 +94,9 @@ public class MarketAlert {
 
     }
 
-    public void validLogin() {
+    public void validLogin() throws InterruptedException {
         System.setProperty("webdriver.chrome.driver", "/users/rober/webtesting/chromedriver.exe");
         driver = new ChromeDriver();
-
         //Go to google and disable cookies dialog
         driver.get("https://www.marketalertum.com/Alerts/Login");
         WebElement searchField = driver.findElement(By.name("UserId"));
@@ -104,11 +104,12 @@ public class MarketAlert {
         WebElement searchButton = driver.findElement(By.xpath("/html/body/div/main/form/input[2]"));
         searchButton.submit();
 
+        Thread.sleep(500);
 
         url = driver.getCurrentUrl();
     }
 
-    public void invalidLogin() {
+    public void invalidLogin() throws InterruptedException {
         System.setProperty("webdriver.chrome.driver", "/users/rober/webtesting/chromedriver.exe");
         driver = new ChromeDriver();
 
@@ -119,8 +120,10 @@ public class MarketAlert {
         WebElement searchButton = driver.findElement(By.xpath("/html/body/div/main/form/input[2]"));
         searchButton.submit();
 
+        Thread.sleep(500);
 
         url = driver.getCurrentUrl();
+
     }
 
     public Boolean findHeading(){
@@ -247,15 +250,15 @@ public class MarketAlert {
 
 
 
-    public String checkIconFileName(String type){
+    public Boolean checkIconFileName(String type){
 
         String icon = driver.findElement(By.cssSelector(" tbody > tr:first-of-type > td > h4 > img")).getAttribute("src");
 
         String split = "https://www.marketalertum.com/images/";
         if(icon.equals(split.concat(type))){
-            return "equal";
+            return true;
         }
-        return "different";
+        return false;
     }
 
 }

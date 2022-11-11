@@ -25,7 +25,7 @@ public class AlertLimitSteps {
     }
 
     @When("I view a list of alerts")
-    public void iViewAListOfAlerts() {
+    public void iViewAListOfAlerts() throws InterruptedException {
         marketAlert.validLogin();
     }
 

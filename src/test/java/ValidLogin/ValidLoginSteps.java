@@ -17,7 +17,7 @@ public class ValidLoginSteps {
     }
 
     @When("I login using valid credentials")
-    public void iLoginUsingValidCredentials() {
+    public void iLoginUsingValidCredentials() throws InterruptedException {
         marketAlert.validLogin();
 
     }
