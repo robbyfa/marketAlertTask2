@@ -192,7 +192,7 @@ public class MarketAlert {
             return true;
         }
         else {
-            return true;
+            return false;
         }
     }
 
